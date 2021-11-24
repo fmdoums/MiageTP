@@ -12,3 +12,7 @@ services:
     volumes:
       - ~/iris.key:/usr/irissys/mgr/iris.key
       - ./:/irisdev/app
+networks:
+  default:
+    external: true
+    name: my-pre-defined-network
