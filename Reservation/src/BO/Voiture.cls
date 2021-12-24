@@ -10,14 +10,14 @@ Parameter INVOCATION = "Queue";
 Method creerVoiture(pRequest As msg.creerVoitureDmde, Output pResponse As msg.creerVoitureRpse) As %Status
 {
     
-    set pResponse = ##class(msg.creerVoitureRpse).%New()
-    set voiture = ##class(data.Voiture).%New()
-    set voiture.nom = pRequest.nom
-    set voiture.categorie = pRequest.categorie
-    set voiture.plaque = pRequest.plaque
-    set tsc = voiture.%Save()
+    Set pResponse = ##class(msg.creerVoitureRpse).%New()
+    Set voiture = ##class(data.Voiture).%New()
+    Set voiture.nom = pRequest.nom
+    Set voiture.categorie = pRequest.categorie
+    Set voiture.plaque = pRequest.plaque
+    Set tsc = voiture.%Save()
 
-    set pResponse.codeRetour = "OK"
+    Set pResponse.codeRetour = "OK"
 
     Quit $$$OK
 }
